@@ -1,0 +1,85 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfi7kjev4em5g"]
+
+[ext_resource type="Script" path="res://Scenes/TextEdit.gd" id="1_iiiqv"]
+[ext_resource type="Script" path="res://Scenes/NameEntry.gd" id="1_sb0fj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_67mib"]
+bg_color = Color(0.972549, 0.807843, 0.301961, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+expand_margin_right = 15.0
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i0006"]
+bg_color = Color(0.972549, 0.807843, 0.301961, 1)
+
+[node name="NameEntry" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_sb0fj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.970647, 0.809626, 0.303686, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VFlowContainer" type="HFlowContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/v_separation = 20
+alignment = 1
+
+[node name="Your Name" type="Button" parent="CenterContainer/VFlowContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/disabled = SubResource("StyleBoxFlat_67mib")
+disabled = true
+text = "Your Name?"
+
+[node name="LineEdit" type="LineEdit" parent="CenterContainer/VFlowContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/caret_color = Color(1, 1, 1, 1)
+theme_override_colors/selection_color = Color(0, 0, 0, 1)
+theme_override_constants/caret_width = 10
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_i0006")
+theme_override_styles/focus = SubResource("StyleBoxFlat_i0006")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_i0006")
+alignment = 1
+max_length = 25
+expand_to_text_length = true
+caret_blink = true
+caret_force_displayed = true
+script = ExtResource("1_iiiqv")
+
+[connection signal="text_submitted" from="CenterContainer/VFlowContainer/LineEdit" to="." method="_on_line_edit_text_submitted"]

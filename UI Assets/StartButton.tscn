@@ -1,0 +1,54 @@
+[gd_scene load_steps=5 format=3 uid="uid://mwpixfqdbyq4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nmprb"]
+bg_color = Color(0.972549, 0.807843, 0.301961, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 5
+shadow_offset = Vector2(2, 2)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1uv0r"]
+bg_color = Color(0.972549, 0.807843, 0.301961, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 3
+shadow_offset = Vector2(1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sc3d8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ug6uh"]
+
+[node name="StartButton" type="Button"]
+offset_left = -37.5
+offset_top = -37.5
+offset_right = 37.5
+offset_bottom = 37.5
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_nmprb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nmprb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_1uv0r")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_sc3d8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ug6uh")
+keep_pressed_outside = true
+text = "   ⏵   "

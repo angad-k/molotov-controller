@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://vwdy4uvciwr8"]
+
+[ext_resource type="Script" path="res://Scenes/AspectRatio.gd" id="1_4evbm"]
+[ext_resource type="PackedScene" uid="uid://dob4hkn76d0ld" path="res://UI Assets/TextButton.tscn" id="2_6sjyu"]
+[ext_resource type="Script" path="res://Scenes/Games.gd" id="2_jam8v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kl6ii"]
+bg_color = Color(0.972549, 0.807843, 0.301961, 1)
+border_color = Color(0.8, 0.8, 0.8, 0)
+expand_margin_right = 15.0
+shadow_color = Color(0, 0, 0, 1)
+
+[node name="Games" type="AspectRatioContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 2.20984
+stretch_mode = 3
+script = ExtResource("1_4evbm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.970647, 0.809626, 0.303686, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 2
+
+[node name="VScrollBar" type="VScrollBar" parent="CenterContainer"]
+layout_mode = 2
+custom_step = 5.0
+
+[node name="VFlowContainer" type="HFlowContainer" parent="CenterContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 15
+alignment = 1
+script = ExtResource("2_jam8v")
+
+[node name="Rooms Found" type="Button" parent="CenterContainer/VFlowContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_normal_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_disabled_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/disabled = SubResource("StyleBoxFlat_kl6ii")
+disabled = true
+text = "Room's Found:"
+
+[node name="TextButton" parent="CenterContainer/VFlowContainer" instance=ExtResource("2_6sjyu")]
+layout_mode = 2
+text = "Room 1"
+
+[node name="TextButton2" parent="CenterContainer/VFlowContainer" instance=ExtResource("2_6sjyu")]
+layout_mode = 2
+text = "Room 3"
+
+[node name="TextButton3" parent="CenterContainer/VFlowContainer" instance=ExtResource("2_6sjyu")]
+layout_mode = 2
+text = "Room 2"
+
+[connection signal="pressed" from="CenterContainer/VFlowContainer/TextButton" to="CenterContainer/VFlowContainer" method="_on_text_button_pressed"]
